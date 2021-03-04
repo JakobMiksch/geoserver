@@ -5,6 +5,7 @@
  */
 package org.vfny.geoserver.servlets;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -84,7 +85,7 @@ public class FreefsLog extends HttpServlet {
         } catch (ClassNotFoundException cnfe) {
             LOGGER.fine("No SDE datasource found");
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOGGER.log(Level.WARNING, "", ex);
         }
     }
 }
